@@ -1,0 +1,1336 @@
+/* General Styling */
+:root {
+    --primary-color: #5d8aa8; /* Medium Blue */
+    --primary-navy: #36454F; /* Darker Navy for text and important elements */
+    --light-navy-pastel: #AECAD6; /* Lighter Navy Pastel for accents */
+    --white: #FFFFFF;
+    --light-gray: #F8F8F8;
+    --text-color: #333;
+    --heading-color: #222;
+    --border-color: #ddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    color: var(--text-color);
+    /* background-color: var(--white); */
+    overflow-x: hidden; /* Prevent horizontal scroll from animations */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    color: var(--heading-color);
+    line-height: 1.2;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-navy);
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-navy);
+    transform: translateY(-2px);
+}
+
+/* Header */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    /* color: var(--primary-navy); */
+    padding: 20px 0;
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.05); */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.8em;
+    color: var(--primary-navy);
+}
+
+.company-logo {
+    height: 100px;
+    margin-right: 15px;
+    border-radius: 50%; /* Optional: for round logos */
+}
+
+header .logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--primary-navy);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--primary-navy);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--light-navy-pastel);
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 30px;
+}
+
+header nav ul li a {
+    color: var(--primary-navy);
+    font-weight: 600;
+    font-size: 1.05em;
+    padding: 5px 0;
+    position: relative;
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Language Switcher - Dropdown Styling */
+.language-switcher {
+    display: flex; /* Menggunakan flexbox untuk menata ikon dan dropdown */
+    align-items: center; /* Pusatkan secara vertikal */
+    gap: 8px; /* Jarak antara ikon dan dropdown */
+    margin-left: 20px; /* Jarak dari nav */
+}
+
+.language-switcher .language-icon {
+    font-size: 1.2em; /* Ukuran ikon */
+    color: var(--primary-navy); /* Warna ikon */
+}
+
+.language-switcher select {
+    padding: 8px 12px;
+    border: 1px solid var(--primary-navy);
+    border-radius: 5px;
+    background-color: var(--white);
+    color: var(--primary-navy);
+    font-weight: 600;
+    cursor: pointer;
+    appearance: none; /* Remove default dropdown arrow */
+    -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none; /* For Firefox */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="%2336454F" d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592c.86 0 1.32 1.013.754 1.658L8.753 11.14a1 1 0 0 1-1.506 0z"/></svg>'); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.language-switcher select:hover {
+    border-color: var(--light-navy-pastel);
+    box-shadow: 0 0 0 3px rgba(174,202,214,0.3);
+}
+
+.language-switcher select:focus {
+    outline: none;
+    border-color: var(--light-navy-pastel);
+    box-shadow: 0 0 0 3px rgba(174,202,214,0.3);
+}
+
+/* Hero Section */
+#hero {
+    background-color: var(--light-gray);
+    padding: 100px 0;
+    text-align: center;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(174,202,214,0.3) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+#hero h1 {
+    font-size: 3.5em;
+    color: var(--heading-color);
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+#hero p {
+    font-size: 1.3em;
+    color: var(--text-color);
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-navy);
+    color: var(--white);
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-primary:hover {
+    background-color: var(--light-navy-pastel);
+    transform: translateY(-2px);
+}
+
+/* Stats Section */
+#stats {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+    text-align: center;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.stat-item {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    flex: 1 1 280px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-10px);
+}
+
+.stat-number {
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.stat-text {
+    font-size: 1.2em;
+    color: var(--primary-navy);
+    font-weight: 600;
+}
+
+.customer-logos h3 {
+    margin-bottom: 40px;
+    color: var(--heading-color);
+}
+
+.logo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo-grid img {
+    max-height: 60px;
+    max-width: 150px;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-grid img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Sections General */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+/* Background colors for alternating sections */
+#hero, #services, #workflow, #demo-form {
+    background-color: var(--light-gray);
+}
+#stats, #about, #vision-mission, #faq, #testimonials {
+    background-color: var(--white);
+}
+
+#stats, #services, #about, #vision-mission, #workflow, #faq, #testimonials, #demo-form, footer {
+    padding: 50px 0;
+}
+
+section h2 {
+    font-size: 2.8em;
+    color: var(--heading-color);
+    margin-bottom: 60px;
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--light-navy-pastel);
+    border-radius: 2px;
+}
+
+/* Stats Section */
+#stats {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+.stat-item {
+    padding: 20px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.stat-number {
+    font-size: 3.5em;
+    font-weight: 700;
+    color: var(--primary-navy);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.stat-text {
+    font-size: 1.2em;
+    color: var(--text-color);
+}
+
+.customer-logos h3 {
+    font-size: 1.8em;
+    color: var(--heading-color);
+    margin-bottom: 30px;
+}
+
+.logo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.logo-grid img {
+    max-width: 150px;
+    height: auto;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-grid img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Services Section */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.service-item {
+    background-color: var(--white); /* Changed to white for contrast against light-gray services section */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.service-item h3 {
+    color: var(--primary-navy);
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    color: var(--text-color);
+    font-size: 1.1em;
+}
+
+/* About Section */
+#about p {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.2em;
+    line-height: 1.8;
+}
+
+/* Vision & Mission Section */
+#vision-mission {
+    padding: 80px 0;
+    background-color: var(--white);
+    text-align: center;
+}
+
+#vision-mission h2 {
+    margin-bottom: 50px;
+    color: var(--primary-navy);
+}
+
+.vision-mission-content {
+    display: flex; /* Tetap flex untuk sekarang, akan diubah untuk mobile */
+    flex-direction: column; /* Mengatur item agar tumpuk secara vertikal */
+    align-items: center; /* Pusatkan secara horizontal */
+    gap: 40px; /* Jarak antara visi dan misi */
+    max-width: 900px; /* Batasi lebar agar tidak terlalu lebar */
+    margin: 0 auto; /* Pusatkan kontainer */
+}
+
+.vision-box,
+.mission-box {
+    background-color: var(--light-gray);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Mengatur rata kiri untuk judul dan konten */
+    width: 100%; /* Ambil lebar penuh dari parent .vision-mission-content */
+    max-width: 700px; /* Batasi lebar masing-masing box */
+    transition: transform 0.3s ease-in-out;
+}
+
+.vision-box:hover,
+.mission-box:hover {
+    transform: translateY(-5px);
+}
+
+.vision-box h3,
+.mission-box h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.vision-box p,
+.mission-box p,
+.mission-box ul li {
+    line-height: 1.8;
+    color: var(--text-color);
+    text-align: justify; /* Mengatur teks menjadi justify */
+}
+
+.mission-box ul {
+    list-style: none; /* Hapus bullet default */
+    padding: 0;
+    margin: 0;
+}
+
+.mission-box ul li {
+    position: relative;
+    padding-left: 25px; /* Ruang untuk ikon */
+    margin-bottom: 10px;
+}
+
+.mission-box ul li::before {
+    content: "\f058"; /* Font Awesome check-circle icon */
+    font-family: "Font Awesome 6 Free"; /* Pastikan font family sesuai */
+    font-weight: 900; /* Untuk solid icon */
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    top: 5px; /* Sesuaikan posisi vertikal ikon */
+    font-size: 0.9em;
+}
+
+/* Workflow Section */
+#workflow {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+    text-align: center;
+}
+
+#workflow h2 {
+    margin-bottom: 15px; /* Kurangi jarak dengan deskripsi baru */
+    color: var(--primary-navy);
+}
+
+/* Styling for the new workflow description */
+#workflow .workflow-description {
+    font-size: 1.1em;
+    color: var(--text-color);
+    margin-bottom: 40px; /* Jarak antara deskripsi dan langkah-langkah */
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#workflow .workflow-infographic {
+    display: flex;
+    flex-wrap: wrap; /* Izinkan item untuk melipat ke baris berikutnya */
+    justify-content: center; /* Pusatkan item saat melipat */
+    gap: 30px; /* Jarak antar step */
+    margin-top: 50px;
+}
+
+#workflow .workflow-infographic .step {
+    flex: 1 1 calc(33% - 40px); /* 3 items per baris di layar besar, sesuaikan lebar */
+    min-width: 280px; /* Lebar minimum agar tidak terlalu sempit */
+    text-align: center;
+    background-color: var(--white); /* Ubah background agar beda dengan background section */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#workflow .workflow-infographic .step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+#workflow .workflow-infographic .step-icon {
+    font-size: 2.5em; /* Ukuran ikon */
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+#workflow .workflow-infographic .step h3 {
+    color: var(--primary-navy);
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+#workflow .workflow-infographic .step p {
+    color: var(--text-color);
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+/* Arrow styling (adjust if needed for 7 steps) */
+.workflow-infographic .step-arrow {
+    width: 30px; /* Lebar panah */
+    height: 2px;
+    background-color: var(--primary-color);
+    position: relative;
+    align-self: center; /* Sejajarkan panah di tengah secara vertikal */
+    margin: 0 -15px; /* Sesuaikan untuk tumpang tindih dengan gap */
+}
+
+/* Remove arrows when wrapping to new row or on mobile */
+@media (max-width: 992px) {
+    .workflow-infographic .step-arrow {
+        display: none; /* Hide horizontal arrows on smaller screens */
+    }
+    #workflow .workflow-infographic {
+        flex-direction: column; /* Stack steps vertically on smaller screens */
+        align-items: center; /* Center them */
+    }
+    #workflow .workflow-infographic .step {
+        flex: 1 1 90%; /* Take more width on small screens */
+        max-width: 400px; /* Max width for single column */
+    }
+}
+@media (min-width: 993px) and (max-width: 1200px) {
+    #workflow .workflow-infographic .step {
+        flex: 1 1 calc(50% - 40px); /* 2 items per row on medium screens */
+    }
+}
+
+/* FAQ Section */
+#faq {
+    /* Background set by general section rules */
+}
+
+.faq-accordion {
+    max-width: 800px;
+    margin: 40px auto 0;
+    text-align: left;
+}
+
+.faq-item {
+    background-color: var(--light-gray); /* Changed to light-gray for contrast against white FAQ section */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--light-gray); /* Header background */
+    color: var(--primary-navy);
+    font-size: 1.2em;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: #e0e0e0; /* Slightly darker gray on hover */
+}
+
+.accordion-header .icon {
+    font-size: 1.5em;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.active .icon {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    background-color: var(--white); /* Content background remains white */
+}
+
+.accordion-content p {
+    padding-bottom: 20px;
+    font-size: 1em;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+/* Testimonials Section */
+#testimonials {
+    /* Background set by general section rules */
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.testimonial-item {
+    background-color: var(--light-gray); /* Changed for contrast against white testimonials section */
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.testimonial-item .quote {
+    font-size: 1.15em;
+    font-style: italic;
+    margin-bottom: 20px;
+    color: var(--heading-color);
+    line-height: 1.7;
+}
+
+.testimonial-item .author {
+    font-weight: 600;
+    color: var(--primary-navy);
+    font-size: 1em;
+}
+
+/* Demo Form Section */
+#demo-form {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+    text-align: center;
+    /* Background set by general section rules */
+}
+
+#demo-form h2 {
+    margin-bottom: 20px;
+    color: var(--primary-navy);
+}
+
+#demo-form p {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    color: var(--text-color);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary-navy);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+    /* color: var(--text-color); */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus {
+    outline: none;
+    border-color: var(--light-navy-pastel);
+    box-shadow: 0 0 0 3px rgba(174,202,214,0.3);
+}
+
+.contact-form .btn-primary {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+}
+
+/* Footer */
+footer {
+    background-color: var(--white);
+    color: var(--primary-navy);
+    padding: 60px 0 30px;
+    text-align: center;
+}
+
+.footer-copyright {
+    background-color: var(--primary-navy);
+    color: var(--light-gray);
+    padding: 60px 0 30px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.footer-info, .contact-info {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+}
+
+.footer-info h3, .contact-info h3 {
+    color: var(--primary-navy);
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.footer-info p, .contact-info p {
+    font-size: 1em;
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+.contact-info a {
+    color: var(--primary-navy);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--light-navy-pastel);
+}
+
+.copyright {
+    font-size: 0.9em;
+    margin-top: 20px;
+    opacity: 0.8;
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 3px 3px 6px #666;
+}
+
+.whatsapp-float i {
+    color: white;
+}
+
+
+/* Keyframe Animations (same as before) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animations */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
+}
+
+.slide-in-bottom {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Animation Classes (initially hidden) */
+.fade-in-up.visible,
+.fade-in.visible,
+.slide-in-bottom.visible,
+.fade-in-left.visible,
+.fade-in-right.visible,
+.scale-in.visible {
+    opacity: 0;
+    transform: translateY(0) scale(1);
+}
+
+/* Animation Delays for sequential fade-in-up */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+.delay-5 { animation-delay: 1.0s; }
+
+
+/* Animations Triggered by JavaScript (will be added by Intersection Observer) */
+.animated {
+    visibility: visible;
+}
+
+.fade-in-up.animated {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.fade-in.animated {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.slide-in-bottom.animated {
+    animation: slideInBottom 0.8s ease-out forwards;
+}
+
+.fade-in-left.animated {
+    animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.fade-in-right.animated {
+    animation: slideInRight 0.8s ease-out forwards;
+}
+
+.scale-in.animated {
+    animation: scaleIn 0.6s ease-out forwards;
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    #hero h1 {
+        font-size: 2.8em;
+    }
+
+    #hero p {
+        font-size: 1.1em;
+    }
+
+    section h2 {
+        font-size: 2.2em;
+    }
+
+    .service-grid, .vision-mission-content, .testimonial-grid {
+        grid-template-columns: 1fr;
+        flex-direction: column; /* Ensure stacked on smaller screens */
+    }
+
+    .vision-box, .mission-box {
+        max-width: 100%;
+    }
+
+    .workflow-infographic {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .step-arrow {
+        width: 0;
+        height: 0;
+        border-top: 15px solid var(--light-navy-pastel);
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        margin: 20px auto;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 15px 10px;
+    }
+
+    #hero {
+        padding: 80px 0;
+        min-height: auto;
+    }
+
+    #hero h1 {
+        font-size: 2.2em;
+    }
+
+    #hero p {
+        font-size: 1em;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    section h2 {
+        font-size: 1.8em;
+        margin-bottom: 40px;
+    }
+
+    .service-item, .vision-box, .mission-box, .contact-form, .testimonial-item, .faq-item {
+        padding: 30px;
+    }
+
+    .mission-box ul li {
+        padding-left: 20px;
+    }
+
+    .stats-grid {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .stat-number {
+        font-size: 2.8em;
+    }
+
+    .logo-grid {
+        gap: 20px;
+    }
+
+    .logo-grid img {
+        max-width: 100px;
+    }
+
+    .step {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5em;
+    }
+
+    nav ul li {
+        margin: 0 10px 10px;
+    }
+
+    #hero h1 {
+        font-size: 1.8em;
+    }
+
+    .btn-primary {
+        padding: 12px 25px;
+        font-size: 0.9em;
+    }
+
+    section h2 {
+        font-size: 1.6em;
+    }
+
+    .footer-info, .contact-info {
+        margin: 15px 0;
+    }
+    .accordion-header {
+        font-size: 1.1em;
+        padding: 15px 20px;
+    }
+    .accordion-content p {
+        padding-bottom: 15px;
+    }
+}
+@keyframes slides {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  padding: 30px 0px;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:before, .logos:after {
+  position: absolute;
+  top: 0;
+  content: '';
+  width: 250px;
+  height: 100%;
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255,255,255,0), rgb(255, 255, 255));
+}
+
+.logos:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255,255,255,0), rgb(255, 255, 255));
+}
+
+.logo_items {
+  display: inline-block;
+  animation: 35s slides infinite linear;
+}
+
+.logos:hover .logo_items {
+  animation-play-state: paused;
+}
+
+.logo_items img{
+  height: 100px;
+}
+
+.logo {
+  width: 250px; /* Atur lebar logo */
+  height: auto; /* Biarkan tinggi menyesuaikan */
+  margin-right: -20%;
+  /* Atau, gunakan max-width dan max-height */
+  /* max-width: 200px;
+  max-height: 100px; */
+}
+
+.company-logo {
+    height: 100px;
+    margin-right: 15px;
+    border-radius: 50%; /* Optional: for round logos */
+}
+
+/* Services Section */
+#services {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+    text-align: center;
+}
+
+#services h2 {
+    margin-bottom: 50px;
+    color: var(--primary-navy);
+}
+
+.service-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.service-item {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    flex: 1 1 calc(33% - 40px); /* 3 items per row, with gap consideration */
+    max-width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    font-size: 3.5em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    color: var(--primary-navy);
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.service-item p {
+    color: var(--text-color);
+    font-size: 0.95em;
+    line-height: 1.7;
+}
+
+/* About Section */
+#about {
+    padding: 80px 0;
+    background-color: var(--white);
+    color: var(--primary-navy);
+    text-align: center;
+}
+
+#about h2 {
+    margin-bottom: 30px;
+    color: var(--primary-navy);
+}
+
+#about p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
