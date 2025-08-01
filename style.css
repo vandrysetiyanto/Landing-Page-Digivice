@@ -250,7 +250,7 @@ header nav ul li a:hover::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4); /* Dark semi-transparent overlay */
+    background-color: rgba(255, 255, 255, 0.4); /* Dark semi-transparent overlay */
     z-index: 0; /* Place overlay above background image but below content */
 }
 
@@ -276,6 +276,8 @@ header nav ul li a:hover::after {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    font-weight: normal;
+    font-style: oblique;
 }
 
 .btn-primary {
