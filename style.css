@@ -849,63 +849,139 @@ section h2::after {
     font-size: 1.1em;
 }
 
-/* Footer */
-footer {
-    background-color: var(--white);
-    color: var(--primary-navy);
-    padding: 10px 0 10px;
-    text-align: center;
-}
+        /* Footer Specific Styling */
+        footer {
+            background-color: #ffffff;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.05); /* Optional: subtle shadow for footer */
+        }
 
-.footer-copyright {
-    background-color: var(--primary-navy);
-    color: var(--light-gray);
-    padding: 60px 0 30px;
-    text-align: center;
-}
+        /* Logo Section */
+        .logo-container {
+            text-align: left; /* Logo rata kiri */
+            margin-bottom: 30px;
+        }
 
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin-bottom: 0px;
-    text-align: left;
-}
+        .logo-container img {
+            max-width: 200px;
+            height: auto;
+            display: block; /* Ensure image behaves as a block element */
+        }
 
-.footer-info, .contact-info {
-    flex: 1;
-    min-width: 250px;
-    margin: 20px;
-}
+        /* Content Flex Section */
+        .content-flex {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Allows items to wrap to next line */
+            gap: 40px; /* Space between columns */
+            margin-bottom: 30px;
+        }
 
-.footer-info h3, .contact-info h3 {
-    color: var(--primary-navy);
-    font-size: 1.5em;
-    margin-bottom: 15px;
-}
+        /* Left Content (Company Info) */
+        .left-content {
+            flex: 1; /* Allows it to grow and shrink */
+            min-width: 300px; /* Minimum width before wrapping */
+            text-align: left; /* Teks konten kiri rata kiri */
+        }
 
-.footer-info p, .contact-info p {
-    font-size: 1em;
-    margin-bottom: 10px;
-    line-height: 1.7;
-}
+        .left-content h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #333333;
+            font-size: 1.1em;
+        }
 
-.contact-info a {
-    color: var(--primary-navy);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
+        .left-content p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #555555;
+        }
 
-.contact-info a:hover {
-    color: var(--light-navy-pastel);
-}
+        /* Right Content (Contact Info) */
+        .right-content {
+            flex: 1; /* Allows it to grow and shrink */
+            min-width: 200px; /* Minimum width before wrapping */
+            text-align: left;
+        }
 
-.copyright {
-    font-size: 0.9em;
-    margin-top: 20px;
-    opacity: 0.8;
-}
+        .right-content h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #333333;
+            font-size: 1.2em;
+        }
+
+        .right-content p {
+            margin-bottom: 10px;
+        }
+
+        .right-content a {
+            color: #555555;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .right-content a:hover {
+            color: #007bff; /* Example hover color */
+            text-decoration: underline;
+        }
+
+        /* Copyright Text */
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #eeeeee;
+            color: #777777;
+            font-size: 0.85em;
+            margin-top: 20px; /* Space above copyright line */
+        }
+
+        /* Responsive Design */
+
+        /* For screens smaller than 768px (e.g., tablets in portrait, large phones) */
+        @media (max-width: 768px) {
+            .content-flex {
+                flex-direction: column; /* Stacks items vertically */
+                gap: 20px; /* Adjust gap for stacked layout */
+            }
+
+            .left-content,
+            .right-content {
+                min-width: unset; /* Remove min-width when stacked */
+                margin-right: 0; /* Remove right margin when stacked */
+                width: 100%; /* Take full width when stacked */
+            }
+
+            .logo-container {
+                text-align: center; /* Center logo on smaller screens if preferred */
+            }
+        }
+
+        /* For screens even smaller than 480px (e.g., mobile phones) */
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 15px; /* Reduce padding on very small screens, overrides 150px padding */
+            }
+
+            .logo-container {
+                margin-bottom: 20px;
+            }
+
+            .logo-container img {
+                max-width: 150px; /* Smaller logo on very small screens */
+            }
+
+            .left-content h3,
+            .right-content h2 {
+                font-size: 1em; /* Smaller headings */
+            }
+
+            .left-content p,
+            .right-content p,
+            .copyright {
+                font-size: 0.8em; /* Smaller body text */
+            }
+        }
 
 /* Floating WhatsApp Button */
 .whatsapp-float {
