@@ -90,6 +90,19 @@ header .container {
     align-items: center;
 }
 
+
+        .header-with-bg-image::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.4); /* Dark semi-transparent overlay */
+        z-index: 0; /* Place overlay above background image but below content */
+        }
+
+
 .logo {
     font-weight: 700;
     font-size: 1.5em;
@@ -215,6 +228,11 @@ header nav ul li a:hover::after {
     justify-content: center;
     position: relative;
     overflow: hidden;
+    background-image: url('img/Bg-body.jpg'); /* Placeholder agricultural image */
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Needed for pseudo-element positioning */
+    color: white; /* Ensure text color is white for readability */
 }
 
 #hero::before {
@@ -226,6 +244,14 @@ header nav ul li a:hover::after {
     height: 100%;
     background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(174,202,214,0.3) 100%);
     z-index: 1;
+    content: '';
+    top: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark semi-transparent overlay */
+    z-index: 0; /* Place overlay above background image but below content */
 }
 
 .hero-content {
@@ -825,7 +851,7 @@ section h2::after {
 footer {
     background-color: var(--white);
     color: var(--primary-navy);
-    padding: 60px 0 10px;
+    padding: 10px 0 10px;
     text-align: center;
 }
 
@@ -841,7 +867,7 @@ footer {
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     text-align: left;
 }
 
